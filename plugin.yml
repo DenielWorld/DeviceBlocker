@@ -1,0 +1,6 @@
+name: DeviceBlocker
+main: DenielWorld\Main;
+version: 1.0.0
+api: 3.0.0
+author: DenielWorld
+description: Block a specific type of device from entering your PMMP server!

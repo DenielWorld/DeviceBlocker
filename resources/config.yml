@@ -1,0 +1,29 @@
+#When enabled, W10 players will not be able to join the server.
+w10: true
+
+#The kick reason given to the player for using W10. Not functional if W10 players are allowed to play.
+w10-kick-reason: "&cPlease change your device to play on this server"
+
+#Leave message of the player broadcasted to everyone when the player got kicked for being W10.
+#Not functional if W10 players are allowed to play.
+w10-quit-message: "&cSomeone was kicked for being a W10 player" #TODO: Add {player} tag
+
+#When enabled, Android players will not be able to join the server.
+android: false
+
+#The kick reason given to the player for using an Android device. Not functional if Android players are allowed to play.
+android-kick-reason: "&cPlease change your device to play on this server"
+
+#Leave message of the player broadcasted to everyone when the player got kicked for being an IOS user.
+#Not functional if Android players are allowed to play.
+android-quit-message: "&cSomeone was kicked for being an Android player"
+
+#When enabled, IOS players will not be able to join the server.
+ios: false
+
+#The kick reason given to the player for using an IOS device. Not functional if IOS players are allowed to play.
+ios-kick-reason: "&cPlease change your device to play on this server"
+
+#Leave message of the player broadcasted to everyone when the player got kicked for being an IOS user.
+#Not functional if IOS players are allowed to play.
+ios-quit-message: "&cSomeone was kicked for being an IOS player"
