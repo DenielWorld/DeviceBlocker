@@ -6,7 +6,7 @@
 # TODO
 [X] Test the plugin
 
-[X] Fix bugs if has any
+[] Fix bugs if has any
 
 [] Implement support for more OS types?
 

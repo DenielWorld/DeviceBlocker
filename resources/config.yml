@@ -5,8 +5,8 @@ w10: true
 w10-kick-reason: "&cPlease change your device to play on this server"
 
 #Leave message of the player broadcasted to everyone when the player gets kicked for being W10.
-#Not functional if W10 players are allowed to play. ( Color support, tags: {player} )
-w10-quit-message: "&c{player} was kicked for being a W10 player"
+#Not functional if W10 players are allowed to play. ( Color support, tags: currently broken )
+w10-quit-message: "&cA Player was kicked for being a W10 player"
 
 #When enabled, Android players will not be able to join the server.
 android: false
@@ -15,8 +15,8 @@ android: false
 android-kick-reason: "&cPlease change your device to play on this server"
 
 #Leave message of the player broadcasted to everyone when the player gets kicked for being an IOS user.
-#Not functional if Android players are allowed to play. ( Color support, tags: {player} )
-android-quit-message: "&c{player} was kicked for being an Android player"
+#Not functional if Android players are allowed to play. ( Color support, tags: currently broken )
+android-quit-message: "&cA Player was kicked for being an Android player"
 
 #When enabled, IOS players will not be able to join the server.
 ios: false
@@ -25,5 +25,9 @@ ios: false
 ios-kick-reason: "&cPlease change your device to play on this server"
 
 #Leave message of the player broadcasted to everyone when the player got kicked for being an IOS user.
-#Not functional if IOS players are allowed to play. ( Color support, tags: {player} )
-ios-quit-message: "&c{player} was kicked for being an IOS player"
+#Not functional if IOS players are allowed to play. ( Color support, tags: currently broken )
+ios-quit-message: "&cA Player was kicked for being an IOS player"
+
+#Report bugs in issues, and suggest more customization features :D
+#P.S. Currently the {player} tag for quit messages does not work, due to a packet issue.
+#I am fully aware of that issue, so there is no need to report it!
