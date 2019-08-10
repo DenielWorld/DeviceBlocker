@@ -20,13 +20,19 @@ class Main extends PluginBase implements Listener{
         }
     }
 
+    public static function replaceText($string, $player){
+        $msg = str_replace("{player}", $player, $string);
+        return $msg;
+    }
+
     public function onPacketReceive(DataPacketReceiveEvent $event){
         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         if($event->getPacket() instanceof LoginPacket){
             //1 = Android, 2 = IOS, 7 = W10
             if($event->getPacket()->clientData["DeviceOS"] == 7){
                 if($cfg->get("w10") == true){
-                    $event->getPlayer()->kick(TF::colorize($cfg->get("w10-kick-reason")), false, TF::colorize($cfg->get("w10-quit-message")));
+                    $event->getPlayer()->kick(TF::colorize($cfg->get("w10-kick-reason")), false/*, TF::colorize($cfg->get("w10-quit-message"))*/);
+                    $this->getServer()->broadcastMessage(self::replaceText(TF::colorize($cfg->get("w10-quit-message")), $event->getPlayer()->getName()));
                 }
                 elseif($cfg->get("w10") == false){
                     return false;
@@ -37,7 +43,8 @@ class Main extends PluginBase implements Listener{
             }
             elseif($event->getPacket()->clientData["DeviceOS"] == 1){
                 if($cfg->get("android") == true){
-                    $event->getPlayer()->kick(TF::colorize($cfg->get("android-kick-reason")), false, TF::colorize($cfg->get("android-quit-message")));
+                    $event->getPlayer()->kick(TF::colorize($cfg->get("android-kick-reason")), false/*, TF::colorize($cfg->get("android-quit-message"))*/);
+                    $this->getServer()->broadcastMessage(self::replaceText(TF::colorize($cfg->get("android-quit-message")), $event->getPlayer()->getName()));
                 }
                 elseif($cfg->get("android") == false){
                     return false;
@@ -48,9 +55,10 @@ class Main extends PluginBase implements Listener{
             }
             elseif($event->getPacket()->clientData["DeviceOS"] == 2){
                 if($cfg->get("ios") == true){
-                    $event->getPlayer()->kick(TF::colorize($cfg->get("ios-kick-reason")), false, TF::colorize($cfg->get("ios-quit-message")));
+                    $event->getPlayer()->kick(TF::colorize($cfg->get("ios-kick-reason")), false/*, TF::colorize($cfg->get("ios-quit-message"))*/);
+                    $this->getServer()->broadcastMessage(self::replaceText(TF::colorize($cfg->get("ios-quit-message")), $event->getPlayer()->getName()));
                 }
-                elseif($cfg->get("android") == false){
+                elseif($cfg->get("ios") == false){
                     return false;
                 }
                 else {

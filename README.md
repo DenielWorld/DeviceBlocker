@@ -4,9 +4,9 @@
  to make it as customizable as I can, and bug-less
  - Author: DenielWorld
 # TODO
-[] Test the plugin
+[X] Test the plugin
 
-[] Fix bugs if has any
+[X] Fix bugs if has any
 
 [] Implement support for more OS types?
 
