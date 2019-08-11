@@ -1,6 +1,6 @@
 <?php
 
-namespace DenielWorld;
+namespace DenielWorld\DeviceBlocker;
 
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\DataPacketReceiveEvent;
@@ -25,7 +25,7 @@ class Main extends PluginBase implements Listener{
         return $msg;
     }
 
-    public function onPacketReceive(DataPacketReceiveEvent $event){
+    public function onPacketReceive(DataPacketReceiveEvent $event) : void {
         $cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         if($event->getPacket() instanceof LoginPacket){
             //1 = Android, 2 = IOS, 7 = W10
@@ -35,10 +35,6 @@ class Main extends PluginBase implements Listener{
                     $event->getPlayer()->kick(TF::colorize($cfg->get("w10-kick-reason")), false/*, TF::colorize($cfg->get("w10-quit-message"))*/);
                 }
                 elseif($cfg->get("w10") == false){
-                    return false;
-                }
-                else {
-                    return false;
                 }
             }
             elseif($event->getPacket()->clientData["DeviceOS"] == 1){
@@ -47,10 +43,6 @@ class Main extends PluginBase implements Listener{
                     $event->getPlayer()->kick(TF::colorize($cfg->get("android-kick-reason")), false/*, TF::colorize($cfg->get("android-quit-message"))*/);
                 }
                 elseif($cfg->get("android") == false){
-                    return false;
-                }
-                else {
-                    return false;
                 }
             }
             elseif($event->getPacket()->clientData["DeviceOS"] == 2){
@@ -59,19 +51,8 @@ class Main extends PluginBase implements Listener{
                     $event->getPlayer()->kick(TF::colorize($cfg->get("ios-kick-reason")), false/*, TF::colorize($cfg->get("ios-quit-message"))*/);
                 }
                 elseif($cfg->get("ios") == false){
-                    return false;
-                }
-                else {
-                    return false;
                 }
             }
-            else {
-                return false;
-            }
         }
-        else {
-            return false;
-        }
-        return true;
     }
 }
